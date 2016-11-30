@@ -15,26 +15,71 @@
 <body>
 <div class="header">
         <ul class="menu">
-            <li><a href="" class="logo"></a>
+            <li><a href="" class="logo"></a></li>
+            <li class="index  hide"><a href="">首页</a></li>
+            <li class="index  hide"><a href="">产品介绍</a></li>
+            <li class="index  hide "><a href="">用户版</a></li>
+            <li class="last  hide "><a href="">登录</a></li>
+            <li class="last hide"><a href="">手机客户端</a></li>
+            <li class="last hide"><a href="">百度司南</a></li>
+            <li class="last hide"><a href="">联系我们</a></li>
+            <li class="last hide"><a href="">申请试用</a></li>
+            <li class="nav show">
+                <span></span>
+                <span></span>
+                <span></span>
             </li>
-            <li class="index"><a href="">首页</a></li>
-            <li class="index"><a href="">产品介绍</a></li>
-            <li class="index"><a href="">用户版</a></li>
-            <li class="last"><a href="">手机客户端</a></li>
-            <li class="last"><a href="">百度司南</a></li>
-            <li class="last"><a href="">联系我们</a></li>
-            <li class="last"><a href="">申请试用</a></li>
         </ul>
+
+    <ul class="min-menu pr">
+        <li><a href="">首页</a></li>
+        <li><a href="">产品介绍</a></li>
+        <li><a href="">用户版</a></li>
+        <li><a href="">登录</a></li>
+        <li><a href="">手机客户端</a></li>
+        <li><a href="">百度司南</a></li>
+        <li><a href="">联系我们</a></li>
+        <li><a href="">申请试用</a></li>
+    </ul>
 </div>
-<div class="fullpage">
+<div class="fullpage" id="fullpage">
     <div class="section pr" id="login">
-        <div class="con pr">
-            <div class="launch obj"></div>
-            <div class="fly obj"></div>
+        <div class="sec-con pr">
+            <div class="launch hide"></div>
+            <div class="fly hide"></div>
             <div class="login-box">
                 <form action="">
                     <div class="login-info">
+                        <div class="user">
+                            <span></span>
+                            <input type="text" name="username" placeholder="用户名">
 
+                        </div>
+                        <p class="error">
+                            <span></span>
+                        </p>
+                        <div class="ps">
+                            <span></span>
+                            <input type="password" name="password" placeholder="密码">
+                        </div>
+                        <p class="error">
+                            <span></span>
+                        </p>
+                        <div class="token">
+                            <input type="text" placeholder="验证码">
+                            <img src="img/token.jpg" alt="">
+                            <a href="#">换一张</a>
+                        </div>
+                        <p class="error">
+                            <span></span>
+                        </p>
+                    </div>
+                    <div class="submit">
+                        <input type="button" value="登录">
+                        <div class="other">
+                            <span class="fl"></span>
+                            <a href="#" class="fl">安全控件常见问题</a>
+                            <a href="#" class="fr">忘记密码</a></div>
                     </div>
                 </form>
             </div>
@@ -48,9 +93,9 @@
         </div>
     </div>
     <div class="section pr" id="lead">
-        <div class="sec-con">
-            <div class="title">
-                <h1></h1>
+        <div class="sec-con pr">
+            <div class="title leftmove">
+                <h1 class="obj"></h1>
                 <div class="text">
                     <h4>数据收集与处理</h4>
                     <p>
@@ -58,7 +103,7 @@
                     </p>
                 </div>
             </div>
-            <div class="brain"></div>
+            <div class="brain rightmove hide"></div>
         </div>
         <div class="bottom">
             <div class="rect-1"></div>
@@ -70,35 +115,57 @@
         </div>
     </div>
     <div class="section pr" id="all">
-        <div class="sec-con">
-            <div class="title">
-                <h1></h1>
+        <div class="sec-con pr">
+            <div class="title leftmove">
+
+                <div class="mrect mrect-1"></div>
+                <div class="mrect mrect-2"></div>
+                <div class="mrect mrect-3"></div>
+                <div class="mrect mrect-4"></div>
+                <div class="mrect mrect-5"></div>
+
+                <h1 class="obj"></h1>
                 <div class="text">
                     <h4>舆情分析逻辑与架构</h4>
                     <p>
                         声量诊断、传播分析、情感提炼、受众画像 <br> 有方法论，更有智慧
                     </p>
                 </div>
+
             </div>
-            <div class="brain"></div>
+
+            <div class="brain rightmove hide"></div>
         </div>
         <div class="bottom">
             <a href="#" class="next-page"></a>
         </div>
     </div>
     <div class="section pr" id="major">
-        <div class="sec-con">
-            <div class="title">
-                <h1></h1>
+        <div class="sec-con pr">
+            <div class="title leftmove">
+                <div class="marc"></div>
+                <h1 class="obj"></h1>
                 <div class="text">
                     <h4>专业数据可视化</h4>
                     <p>非凡的数据洞悉和可视化能力<br> 精研数据，惊艳所见
                     </p>
                 </div>
             </div>
-            <div class="brain"></div>
+            <div class="brain rightmove hide"></div>
+            <div class="copy">
+                © 2014 Baidu
+                <a href="http://www.baidu.com/duty/">使用百度前必读</a>
+            </div>
         </div>
     </div>
+</div>
+<div class="pointpage">
+    <ul>
+        <li class="point active"></li>
+        <li class="point"></li>
+        <li class="point"></li>
+        <li class="point"></li>
+    </ul>
 </div>
 </body>
 </html>
