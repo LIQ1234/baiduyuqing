@@ -92,6 +92,49 @@ a.logo{
 #major{
     background: #009a70 url(../img/bg-3.jpg) repeat center top;
 }
+#login .cloud{
+    width:100%;height:100%;
+    position: absolute;
+    top:0;left:0;
+}
+.cloud-1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    background: url(../img/cloud_1.png) repeat;
+    animation: cloudmove 100s linear infinite;
+}
+.cloud-2{
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: url(../img/cloud_2.png) repeat;
+    animation: cloudmove 280s linear infinite;
+}
+.cloud-3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: url(../img/cloud_3.png) repeat;
+    animation: cloudmove 600s linear infinite;
+}
+@keyframes cloudmove{
+    0%{
+        background-position: 2000px 0;
+    }
+    50%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: -2000px 0;
+    }
+}
 #login .sec-con{
     width: 1000px;
     margin: 0 auto;
@@ -291,6 +334,7 @@ form .login-info{
     top:0;left: 0;
     bottom:0;right:0;
     margin:auto;
+    z-index:7;
     animation: nextGo 1s infinite steps(10,end);
 }
 @keyframes nextGo{

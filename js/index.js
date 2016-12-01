@@ -1,5 +1,11 @@
 $(function(){
 
+    var cH=$(window).height();
+    var cW=$(window).width();
+    $('.fullpage').css({'height':cH,'width':cW});
+    $('.section').css({'height':cH,'width':cW});
+    $('body').css({'height':cH,'width':cW});
+
     $(".fullpage").mousedown(function(e){
         e.preventDefault();
     })
@@ -7,9 +13,10 @@ $(function(){
         e.preventDefault();
     })
 
-    var ch=$(window).height();
     var num=0;
     var flag=true;
+
+
 
     function up(){
         if(!flag){
@@ -22,7 +29,7 @@ $(function(){
         }
         flag=false;
         $(".fullpage").css({
-            marginTop:-num*ch
+            marginTop:-num*cH
         })
         $(".point").removeClass("active").eq(num).addClass("active");
     }
@@ -38,10 +45,11 @@ $(function(){
 
         flag=false;
         $(".fullpage").css({
-            marginTop:-num*ch
+            marginTop:-num*cH
         })
         $(".point").removeClass("active").eq(num).addClass("active");
     }
+
     touch.on("body","swipeup",".fullpage",function(e){
         up();
         e.preventDefault();
@@ -51,6 +59,10 @@ $(function(){
         e.preventDefault();
 
     })
+
+
+
+
     $(".fullpage")[0].addEventListener("webkitTransitionEnd",function(){
         flag=true;
 
@@ -58,10 +70,10 @@ $(function(){
 
                 if(index == num){
                     $(obj).find(".leftmove").css({
-                        animation:"leftmove 1s ease forwards"
+                        animation:"leftmove 0.7s ease forwards"
                     })
                     $(obj).find(".rightmove").css({
-                        animation:"rightmove 1s ease forwards"
+                        animation:"rightmove 0.7s ease forwards"
                     })
                 }else{
                     $(obj).find(".leftmove").css({
@@ -84,10 +96,10 @@ $(function(){
 
     if(num>0){
         $(".leftmove").css({
-            animation:"leftmove 3s ease forwards"
+            animation:"leftmove 0.7s ease forwards"
         })
         $(".rightmove").css({
-            animation:"rightmove 3s ease forwards"
+            animation:"rightmove 0.7s ease forwards"
         })
     }else{
         $(".leftmove").css({
@@ -129,14 +141,37 @@ $(function(){
     })
 
 
+    $(".point").click(function(){
+        var index=$(this).index();
+        num=index;
+        if(num>0){
+            $(".leftmove").css({
+                animation:"leftmove 0.7s ease forwards"
+            })
+            $(".rightmove").css({
+                animation:"rightmove 0.7s ease forwards"
+            })
+        }else{
+            $(".leftmove").css({
+                animation:"none"
+            })
+            $(".rightmove").css({
+                animation:"none"
+            })
+        }
+        $(".fullpage").css({'marginTop':-index*cH});
+        $(".point").removeClass("active").eq(index).addClass("active");
+    })
+
     $(window).resize(function(){
+        cH=$(window).height();
+        cW=$(window).width();
+        $('body').css({'height':cH,'width':cW});
+        $('.fullpage').css({'height':cH,'width':cW,'marginTop':-num*cH});
+        $('.section').css({'height':cH,'width':cW});
 
-        var shuju=document.body.getBoundingClientRect();
-        $(".section").width=shuju.width;
-        $(".section").height=shuju.height;
 
-        var w=$(window).width();
-        if( w>= 1000){
+        if( cW>= 1000){
             $(".min-menu").hide();
             $(".nav").find("span:nth-child(1)").css({
                 transform:"none"
@@ -149,22 +184,7 @@ $(function(){
             });
             Nflag=true;
         }
+
     })
 
-    $(".point").click(function(){
-        var index=$(this).index();
-        // console.log(index)
-        for(var i=0;i<$(".section").length-1;i++){
-            if(index>i){
-                num=index-1;
-                up();
-            }else if(index<i){
-                num=index-1;
-                down();
-            }else{
-                return
-            }
-        }
-        $(".point").removeClass("active").eq(index).addClass("active");
-    })
 })
